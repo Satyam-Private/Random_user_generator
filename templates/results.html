@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0e0f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* User Card Container */
+        .user-card {
+            text-align: center;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .user-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* User Image */
+        .user-card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            border: 4px solid #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .user-card img:hover {
+            transform: scale(1.1);
+        }
+
+        /* User Name */
+        .user-card h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: #007bff;
+        }
+
+        /* User Details */
+        .user-card p {
+            font-size: 1rem;
+            margin: 0.75rem 0;
+            color: #666;
+        }
+
+        .user-card .label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1.5rem;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .user-card {
+                padding: 1.5rem;
+            }
+
+            .user-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .user-card p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="user-card">
+        <img src={{user.photo}} alt="User Picture"> <!-- Replace with dynamic user image URL -->
+        <h2>{{user.name}}</h2> <!-- Replace with dynamic user name -->
+        <p><span class="label">Email:</span> {{ user.email }}</p> <!-- Replace with dynamic user email -->
+        <p><span class="label">Location:</span> {{ user.country }}</p> <!-- Replace with dynamic user location -->
+        <p><span class="label">Phone:</span> {{ user.phone }}</p> <!-- Replace with dynamic user phone -->
+        <button class="btn" onclick="window.location.href='/'">Generate Another User</button>
+    </div>
+</body>
+</html>
